@@ -1,0 +1,2 @@
+-linked list without tail or length
+-implentation getNth linkedlist with recursion
