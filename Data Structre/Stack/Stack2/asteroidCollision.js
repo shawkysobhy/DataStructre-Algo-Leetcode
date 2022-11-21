@@ -26,10 +26,6 @@ const asteroidCollisionHandler = (asteroid) => {
     console.log(stack.getValues());
 };
 
-// asteroidCollisionHandler([8, -8]);
-// asteroidCollisionHandler([10, 2,-5]);
-// asteroidCollisionHandler([-2, -1, 1, 2]);
-// asteroidCollisionHandler([5, 10,-5]);
 
 const asteroidCollisionHandler2 = (asteroid) => {
     let stack = new Stack();
@@ -55,4 +51,14 @@ const asteroidCollisionHandler2 = (asteroid) => {
     return stack.stack;
 };
 
-asteroidCollisionHandler2([5, 10, -5]);
+const test2=()=>{
+    //test asteroidCollisionHandler2
+    asteroidCollisionHandler2([5, 10, -5]);
+}
+const test1=()=>{
+    // testasteroidCollisionHandler
+    asteroidCollisionHandler([8, -8]);
+    asteroidCollisionHandler([10, 2, -5]);
+    asteroidCollisionHandler([-2, -1, 1, 2]);
+    asteroidCollisionHandler([5, 10, -5]);
+}
