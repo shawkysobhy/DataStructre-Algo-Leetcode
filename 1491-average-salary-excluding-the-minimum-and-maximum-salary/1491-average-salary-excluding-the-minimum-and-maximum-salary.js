@@ -3,18 +3,10 @@
  * @return {number}
  */
 var average = function(salary) {
-    let min=salary[0];
-    let max=salary[0];
-    let sumof=0;
-    for(let i=0;i<salary.length;i++){
-        sumof=sumof+salary[i];
-        if(salary[i]>max){
-            max=salary[i]
-        }
-         if(salary[i]<min){
-            min=salary[i]
-        }
+    salary.sort((a, b) => a - b);
+    let sum = 0;
+    for (let i = 1; i < salary.length - 1; i++) {
+        sum += salary[i];
     }
-    console.log(max,min)
-    return (sumof-max-min)/(salary.length-2);
+    return sum / (salary.length - 2);
 };
