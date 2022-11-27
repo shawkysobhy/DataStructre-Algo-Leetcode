@@ -10,17 +10,15 @@
  * @return {boolean}
  */
 var isPalindrome = function(head) {
-  let palindrome=[];
+  let original='';
+  let palindrome='';  
   let tempHead=head;
     while(tempHead){
-        palindrome.push(tempHead.val);
+        original=original+tempHead.val
+        palindrome=tempHead.val+palindrome;
         tempHead=tempHead.next;
     }
-    let reversed=palindrome.reverse().join("");
-    let original=palindrome.reverse().join("");
-    console.log("rev",reversed);
-    console.log("original",original)
-    if(reversed===original){
+    if(palindrome===original){
         return true;
     }else{
         return false;
