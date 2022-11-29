@@ -13,7 +13,7 @@ var lengthOfLastWord = function(s) {
     //     }
     // }
     // return expected.length;
-        let words=s.trim().split(" ");
+    let words=s.trim().split(" ");
     return words[words.length-1].length
 
 };
