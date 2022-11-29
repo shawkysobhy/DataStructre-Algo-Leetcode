@@ -4,8 +4,6 @@
  */
 var lengthOfLastWord = function(s) {
     let words=s.split(" ");
-    console.log(words)
-    console.log("---------")
     let expected=words[words.length-1]
     for(let i=words.length-1;i>=0;i--){
         if(words[i]!==''){
