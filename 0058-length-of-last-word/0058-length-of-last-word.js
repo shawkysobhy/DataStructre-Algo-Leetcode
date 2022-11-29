@@ -13,7 +13,22 @@ var lengthOfLastWord = function(s) {
     //     }
     // }
     // return expected.length;
-    let words=s.trim().split(" ");
-    return words[words.length-1].length
+    
+    
+    //--------
+    // let words=s.trim().split(" ");
+    // return words[words.length-1].length
+    //------
+    let wordPointer=s.length-1;
+    let wordLength=0;
+    while(s[wordPointer]==" "){
+        wordPointer--;
+    }//ignore space in end of string
+    while(wordPointer>=0&&s[wordPointer]!==" "){
+        //first cond to stop loop && sec cond to stop while word end
+        wordLength++;
+        wordPointer--;
+    }
+    return wordLength;
 
 };
