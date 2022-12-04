@@ -4,16 +4,16 @@
  */
 var numUniqueEmails = function(emails) {
     let map={};
-    for(let i=0;i<emails.length;i++){
-       let emailComponent=emails[i].split('@')
+    for(email of emails){
+       let emailComponent=email.split('@')
        emailComponent[0]=emailComponent[0].replace(/\./g,"");
        emailComponent[0]= emailComponent[0].split('+')[0]
-      let email=emailComponent.join('@');
-      if(!map[email]){
-        map[email]=1;
+      let correctEmail=emailComponent.join('@');
+      if(!map[correctEmail]){
+        map[correctEmail]=1;
         
       }else{
-          map[email]++;
+          map[correctEmail]++;
       }
          
     }
