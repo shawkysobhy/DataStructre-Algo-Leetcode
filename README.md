@@ -1,2 +1,6 @@
-# Data-sturctre-and-Algo
-data sturctre and Algo course
+# data structure and algorithm
+
+- repo for implementation various DataStructre ,Algorithm and Practise them on leetcode
+
+
+ 
