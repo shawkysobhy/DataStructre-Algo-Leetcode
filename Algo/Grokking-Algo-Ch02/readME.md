@@ -10,7 +10,7 @@ this Chapter Called "Selection Sort" but is mainly talk about Memory and how dat
 |[Array](#array)|[Linked List](#linked-list) | [selection sort](#selection-sort)
 |[Array Pros](#array-pros)|[list Pros](#list-pros)|[small foot print](#small-foot-print)
 |[Array Cons](#array-cons)|[list Cons](#array-cons)|[selection sort my implemantion](#selection-implemantion)
-| [Array Big O](#array-big-o) |[linked list Big O](#linked-list-big-o) |
+| [Array Big O](#array-big-o) |[linked list Big O](#linked-list-big-o) |[selection sort Big O](#selection-sort-big-o)
 
 
 ---
@@ -148,7 +148,8 @@ A small footprint program or algorithm can offer several advantages, such as fas
 ---
 ## selection Implementation
 
-````/**
+```
+/**
 * O(N) =>Time Complexity
 * O(1)=> Memeory Complexity
 * https://visualgo.net/en/sorting?slide=1-3
@@ -176,4 +177,43 @@ return  arr;
 // selectionSort([5,3,4,1]);
 console.log(selectionSort([34, 22, 10, 19, 17]));
 console.log(selectionSort([1, 2, 3, 4, 5, 6, 7, 8]));
-```
+
+
+ ```
+
+
+## Selection Sort Big O
+
+The difference between a regular selection sort and a selection sort that checks fewer elements is in the number of comparisons that are made in each iteration.
+
+In a regular selection sort, for each iteration, the algorithm compares the current element with every other element in the unsorted part of the array to find the smallest (or largest) element. This requires n-1 comparisons in the first iteration, n-2 comparisons in the second iteration, and so on, resulting in a total of (n-1) + (n-2) + ... + 1 = n(n-1)/2 comparisons in the worst case.
+
+In a selection sort that checks fewer elements, the algorithm only compares the current element with the remaining elements in the unsorted part of the array that come after the current minimum (or maximum) element found. This requires roughly half as many comparisons as a regular selection sort in each iteration, but the total number of comparisons is still in the order of n^2.
+
+Therefore, while a selection sort that checks fewer elements can improve the efficiency of the algorithm in some cases, it does not change the overall time complexity of the algorithm, which is still O(n^2)
+
+----
+---
+To derive the formula for the number of comparisons made by selection sort, we can start by considering the number of comparisons made in the first iteration. In the first iteration, we compare the first element of the array with each of the remaining n-1 elements to find the smallest element. This requires n-1 comparisons.
+
+In the second iteration, we compare the second element of the array with each of the remaining n-2 elements to find the second smallest element. This requires n-2 comparisons.
+
+In general, in the kth iteration, we compare the kth element of the array with each of the remaining n-k elements to find the kth smallest element. This requires n-k comparisons.
+
+The total number of comparisons made by selection sort is the sum of the number of comparisons made in each iteration. We can express this as:
+
+(n-1) + (n-2) + (n-3) + ... + 2 + 1
+
+This is an arithmetic series with a common difference of -1 and a first term of n-1. The sum of an arithmetic series is given by:
+
+sum = (n/2) * (first term + last term)
+
+In this case, the last term is 1, so we can substitute it in and simplify:
+
+sum = (n/2) * (n-1 + 1) sum = (n/2) * n
+
+Simplifying further, we get:
+
+sum = (n*(n-1))/2
+
+Therefore, the number of comparisons made by selection sort is given by the formula (n*(n-1))/2.
