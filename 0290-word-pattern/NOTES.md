@@ -1,1 +1,1 @@
-​
+implentation spilt function with yourself
