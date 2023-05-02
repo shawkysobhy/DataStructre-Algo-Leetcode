@@ -2,9 +2,7 @@
 class MyHashMap {
     constructor() {
         this.data = []
-    }
-    
-      
+    }    
 };
 
 MyHashMap.prototype.put = function(key, value) {
@@ -31,9 +29,6 @@ MyHashMap.prototype.get = function(key) {
     return -1;
 };
 
-MyHashMap.prototype.print=function(){
-    console.log(this.data)
-}
 MyHashMap.prototype.remove = function(key) {
     for(let i=0;i<this.data.length;i++){
         if(this.data[i][0]===key){
