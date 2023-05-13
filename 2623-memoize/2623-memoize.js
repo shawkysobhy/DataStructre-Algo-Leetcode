@@ -4,13 +4,12 @@
 function memoize(fn) {
     let allArgs=new Map();
     return function(...args) {
-      let isInputOld=allArgs.get(args.toString());
-      if(typeof isInputOld!=="undefined"){   
-          return isInputOld;
+      if(allArgs.has(args.toString())){   
+          return allArgs.get(args.toString());
       }else{
-          let out=fn(...args);
-          allArgs.set(args.toString(),out);
-          return out;
+          let output=fn(...args);
+          allArgs.set(args.toString(),output);
+          return output;
       }
     }
 }
