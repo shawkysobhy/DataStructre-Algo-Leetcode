@@ -1,21 +1,19 @@
 /**
  * @param {Function} fn
  */
-const compareInputs=(arg1,arg2)=>arg1.every((ele,indx)=>ele===arg2[indx]);
 function memoize(fn) {
-    let Args=new Map();
+    let allArgs=new Map();
     return function(...args) {
-      let isInputOld=Args.get(args.toString());
+      let isInputOld=allArgs.get(args.toString());
       if(typeof isInputOld!=="undefined"){   
           return isInputOld;
       }else{
           let out=fn(...args);
-          Args.set(args.toString(),out);
+          allArgs.set(args.toString(),out);
           return out;
       }
     }
 }
-
 
 
 /** 
