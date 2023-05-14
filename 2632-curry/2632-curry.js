@@ -5,7 +5,7 @@
 var curry = function(fn) {
   return function curried(...args1){
       if(args1.length>=fn.length)return fn(...args1);
-        return function curried2(...args2){return curried(...args1,...args2);}
+        return (...args2)=>curried(...args1,...args2);
 
   }
 };
