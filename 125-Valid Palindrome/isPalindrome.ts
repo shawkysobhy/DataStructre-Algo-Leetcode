@@ -1,6 +1,6 @@
 //leetcode.com/problems/valid-palindrome/submissions/864443165/
 
-https: function isPalindrome(s: string): boolean {
+ function isPalindrome(s: string): boolean {
     let left = 0;
     let right = s.length - 1;
     let w1: string;
