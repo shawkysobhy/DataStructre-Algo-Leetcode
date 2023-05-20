@@ -8,6 +8,5 @@ var arrayPairSum = function(nums) {
     for(let i=0;i<nums.length;i+=2){
         minNums.push(Math.min(nums[i],nums[i+1]));
     }
-    console.log(minNums)
-    return minNums.reduce((acc,curr)=>curr+acc,0)
+    return minNums.reduce((acc,curr)=>curr+acc)
 };
