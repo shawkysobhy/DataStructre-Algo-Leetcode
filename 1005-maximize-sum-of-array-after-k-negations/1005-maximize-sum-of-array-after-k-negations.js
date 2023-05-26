@@ -12,17 +12,14 @@ var largestSumAfterKNegations = function(nums, k) {
             k--;
         }  
     }
-    console.log('nums after sort and make all positive',nums)
     nums.sort((a,b)=>a-b);
     for(let i=0;i<nums.length;i++){
         if(k%2==0){
             break;
         }
         nums[i]=nums[i]*-1;
-        k--;
-        
+        k--; 
     }
-   
     return nums.reduce((pre,curr)=>pre+curr)
 }
 
