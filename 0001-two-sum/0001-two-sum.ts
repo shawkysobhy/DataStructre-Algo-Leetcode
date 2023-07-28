@@ -1,16 +1,15 @@
 function twoSum(nums: number[], target: number): number[] {
-    let numsMap:any=new Map();
+  const myMap=new Map();
+  for(let i=0;i<nums.length;i++){
+      myMap.set(nums[i],i);
+  }   
    for(let i=0;i<nums.length;i++){
-       numsMap.set(nums[i],i)
+       let nd2=target-nums[i];
+       if(myMap.has(nd2)){
+         let nd2Index=nums.indexOf(nd2);
+           if(nd2Index!==i){
+             return [i,nums.indexOf(nd2)]
+           }
+       }
    }
-   for(let i=0;i<nums.length;i++){
-    let tag=target-nums[i];
-    let j=numsMap.get(tag);
-    if(i!==j&&numsMap.has(tag)){
-        return [i,numsMap.get(tag)];
-        }
-    }
-    return [-1,-1]
-    //never returned but due typeScript
-   
 };
