@@ -1,7 +1,7 @@
 function twoSum(nums: number[], target: number): number[] {
   const myMap=new Map();
   for(let i=0;i<nums.length;i++){
-      myMap.set(nums[i],i);
+      myMap.set(nums[i],target-i);
   }   
    for(let i=0;i<nums.length;i++){
        let nd2=target-nums[i];
