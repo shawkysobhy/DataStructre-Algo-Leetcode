@@ -9,7 +9,7 @@ function groupAnagrams(strs: string[]): string[][] {
       }
   }
 let result=[]
-for (const [key, value] of Object.entries(anagramGroupArr)) {
+for (const [_, value] of Object.entries(anagramGroupArr)) {
   result.push(value)
 }
     return result;
