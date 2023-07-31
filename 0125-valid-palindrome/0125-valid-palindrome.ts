@@ -1,20 +1,13 @@
+
 function isPalindrome(s: string): boolean {
- let left = 0;
-    let right = s.length - 1;
-    let w1: string;
-    let w2: string;
-    while (right > left) {
-        w1 = s[left].toLowerCase();
-        w2 = s[right].toLowerCase();
-        if (!/[a-zA-Z0-9]/.test(w1)) {
-            left++;
-        } else if (!/[a-zA-Z0-9]/.test(w2)) {
-            right--;
-        } else {
-            if (w1 !== w2) return false;
-            left++;
-            right--;
-        }
+ let processedS=s.toLowerCase().replace(/[^a-z0-9]/gi,'');
+    console.log(processedS)
+    let pt1=0;
+    let pt2=processedS.length-1;
+    while(pt2>pt1){
+        if(processedS[pt1]!==processedS[pt2])return false;
+        pt2--;
+        pt1++;
     }
     return true;
 };
