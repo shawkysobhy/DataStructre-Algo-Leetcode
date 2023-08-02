@@ -1,12 +1,10 @@
 function maxProfit(prices: number[]): number {
    let b_profit=0;
    let b_bought=prices[0]
-   let b_sell=prices[1];
     let pt1=0;
     let pt2=1;
    while(pt2<prices.length){
        let profit=prices[pt2]-prices[pt1];  
-       console.log(`${prices[pt2]} - ${prices[pt1]} = ${profit}`)
        if(profit>b_profit){
            b_profit=profit;
        }
